@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Formatting Rules:
+        Every fourth item is a question.
+        3 items under a question are it's answers
+    -->
+    <string-array name="brain_sex_questions">
+        <item>1. Przy czytaniu mapy lub drogowskazów:</item>
+        <item>masz trudności i często prosisz o pomoc</item>
+        <item>obracasz mapę, żeby patrzeć w kierunku, w którym idziesz</item>
+        <item>nie masz żadnych trudności w czytaniu map i drogowskazów</item>item>
+        <item>2. Gotujesz skomplikowane danie przy włączonym radiu, dzwoni znajomy. Co robisz ?</item>
+        <item>zostawiasz radio włączone i kontynuujesz gotowanie, rozmawiając przez telefon</item>
+        <item>wyłączasz radio, rozmawiasz i nadal gotujesz</item>
+        <item>mówisz, że za chwilę oddzwonisz, gdy tylko skończysz gotować</item>
+        <item>3. Przyjaciele wybierają się do ciebie z wizytą i proszą o wskazówki, jak dotrzeć do twojego nowego domu. Co robisz ?</item>
+        <item>rysujesz im mapkę z wyraźnie zaznaczoną trasą i im ją wysyłasz lub wzywasz kogoś innego, aby im to wytłumaczył</item>
+        <item>pytasz, jakie znają punkty orientacyjne, potem próbujesz im wytłumaczyć, jak dojechać na miejsce</item>
+        <item>wyjaśniasz im, jak dojechać: "Wjeżdżasz na autostradę M3 do Newcastle, zawracasz, skręcasz w lewo, dojeżdżasz do drugich świateł…</item>
+        <item>4. Kiedy objaśniasz jakiś nowy pomysł lub koncepcję, prawdopodobnie:</item>
+        <item>użyjesz ołówka, papieru i gestów mowy ciała</item>
+        <item>wyjaśniasz słownie, używając gestów i mowy ciała</item>
+        <item>wyjaśniasz słownie, wyraźnie i kótko</item>
+        <item>5. Kiedy wracasz do domu po obejrzeniu wybitnego filmu, wolisz:</item>
+        <item>wyobrażasz sobie sceny z filmu</item>
+        <item>rozmawiasz o scenach i o tym, co powiedziano</item>
+        <item>cytować wszystko, co powiedziano w filmie</item>
+        <item>6. W kinie wolisz siedzieć:</item>
+        <item>z prawej strony sali</item>
+        <item>gdziekolwiek, wszystko jedno gdzie</item>
+        <item>z lewej strony sali</item>
+        <item>7. Znajomy ma urządzenie mechaniczne, które nie działa:</item>
+        <item>współczujesz i omawiasz z nim, co w związku z tym czuje</item>
+        <item>polecasz kogoś niezawodnego, kto potrafi to naprawić</item>
+        <item>próbujesz domyślić się, jak to działa, i naprawić</item>
+        <item>8. Jesteś w nieznanym miejscu i ktoś cię pyta, gdzie jest północ. Co robisz ?</item>
+        <item>przyznajesz się, że nie wiesz</item>
+        <item>po pewnym namyśle zgadujesz, gdzie jest</item>
+        <item>bez trudu wskazujesz północ</item>
+        <item>9. Znajdujesz miejsce do parkowania, ale jest ciasno. Musisz wjechać w nie tyłem. Co robisz ?</item>
+        <item>wolisz znaleźć inne miejsce</item>
+        <item>starasz się ostrożnie wpasować</item>
+        <item>wjeżdżasz tyłem bez trudności</item>
+        <item>10. Oglądasz telewizję, kiedy dzwoni telefon. Co robisz ?</item>
+        <item>podnosisz słuchawkę przy włączonym telewizorze</item>
+        <item>ściszasz telewizor i podnosisz słuchawkę</item>
+        <item>wyłączasz telewizor, każesz wszystkim obecnym umilknąć i wtedy podnosisz słuchawkę</item>
+        11
+        <item>. Właśnie usłyszałeś/usłyszałaś nową piosenkę ulubionego artysty. Zazwyczaj...</item>
+        <item>bez trudności potrafisz zaśpiewać fragment piosenki</item>
+        <item>potrafisz to zaśpiewać nawet później, jeżeli jest to prosta piosenka</item>
+        <item>trudno ci sobie przypomnieć, jak brzmiała piosenka, ale pamiętasz niektóre słowa</item>
+        <item>12. Jesteś najlepszy(-a) w przewidywaniu rezultatów, dzięki...</item>
+        <item>intuicji</item>
+        <item>podejmujesz decyzję na podstawie dostępnych informacji i przeczuć</item>
+        <item>korzystasz z faktów, statystyk i danych</item>
+        <item>13. Nie możesz znaleźć kluczy. Co robisz ?</item>
+        <item>robisz coś innego, aż sobie przypomnisz</item>
+        <item>robisz coś innego, ale próbujesz sobie przypomnieć, gdzie je położyłeś(-aś)...</item>
+        <item>w myślach odtwarzasz swoje kroki, aż sobie przypomnisz, gdzie je zostawiłeś(-aś)</item>
+        <item>14. Jesteś w pokoju hotelowym i słyszysz dochodzący cię z dużej odległości głos syreny. Potrafisz:</item>
+        <item>wskazać dokładnie miejsce, z którego pochodzi</item>
+        <item>prawdopodobnie mógłbyś (mogłabyś) je wskazać, jeżeli się skupisz</item>
+        <item>nie umiesz wskazać miejsca, z którego pochodzi</item>
+        <item>15. Idziesz na spotkanie towarzyskie i jesteś przedstawiony(-a) siedmiu, ośmiu obcym osobom. Nazajutrz:</item>
+        <item>potrafisz bez trudu wyobrazić sobie ich twarze</item>
+        <item>pamiętasz kilka twarzy</item>
+        <item>bardziej prawdopodobne, że pamiętasz ich nazwiska</item>
+        <item>16. Chcesz na wakacje pojechać na wieś, ale twój partner (twoja partnerka) nalega na nadmorski kurort. Aby przekonać go, że twój pomysł jest lepszy:</item>
+        <item>powiesz mu (jej) słodkim tonem, co czujesz. Uwielbiasz wieś, a dzieci i rodzina zawsze się tam dobrze bawią</item>
+        <item>powiesz mu (jej), że jeżeli wybierzesz się na wieś, będziesz mu (jej) wdzięczny(-a) i z przyjemnością następnym razem wybierzesz się nad morze</item>
+        <item>przedstawisz fakty: wieś jest bliżej, taniej, są tam zorganizowane sporty i wypoczynek</item>
+        <item>17. Kiedy planujesz zadania na określony dzień, zazwyczaj:</item>
+        <item>robisz listę, abyś mógł zobaczyć, co trzeba zrobić</item>
+        <item>myślisz o tym, co trzeba zrobić</item>
+        <item>wyobrażasz sobie ludzi, których zobaczysz, niejsca, które odwiedzisz, i rzeczy, które będziesz robić</item>
+        <item>18. Znajomy ma kłopoty osobiste i przyszedł je z tobą omówić:</item>
+        <item>współczujesz mu i wykazujesz zrozumienie</item>
+        <item>mówisz mu, że kłopoty nigdy nie są aż tak poważne, jak wyglądają, i wyjaśnisz mu dlaczego</item>
+        <item>poddajesz mu pomysły i radzisz, jak rozwiązać problem</item>
+        <item>19. Dwoje przyjaciół z różnych małżeństw ma ze sobą w tajemnicy romans. Jakie jest prawdopodobieństwo, że to wykryjesz ?</item>
+        <item>wykryjesz bardzo wcześnie</item>
+        <item>mniej więcej w połowie</item>
+        <item>prawdopodobnie niczego nie zauważysz</item>
+        <item>20. Na czym polega życie, twoim zdaniem:</item>
+        <item>na posiadaniu przyjaciół i życiu w harmonii z otaczającymi cię ludźmi</item>
+        <item>przyjaznym zachowaniu wobec innych i jednoczesnym zachowaniu osobistej niezależności</item>
+        <item>osiąganiu ważnych celów, zdobywaniu szacunku innych i zyskiwaniu prestiżu i wyższego poziomu życia</item>
+        <item>21. Gdybyś miał(a) wybór, wolałbyś/wolałabyś pracować:</item>
+        <item>w zespole, w którym ludzie się uzupełniają</item>
+        <item>wśród innych, ale zachowując własną przestrzeń</item>
+        <item>w pojedynkę</item>
+        <item>22. Co lubisz czytać:</item>
+        <item>powieści, beletrystykę</item>
+        <item>czasopisma i gazety</item>
+        <item>publicystykę i biografie</item>
+        <item>23. Kiedy robisz zakupy, masz skłonność:</item>
+        <item>często kupować pod wpływem impulsu, zwłaszcza na wyprzedażach</item>
+        <item>masz przygotowany plan ogólny, ale bierzesz, jak leci</item>
+        <item>czytasz opakowania i porównujesz ceny</item>
+        <item>24. Wolisz iść do łóżka, obudzić się i zjeść posiłek:</item>
+        <item>kiedy masz ochotę</item>
+        <item>zgodnie z planem, ale pora nie musi być ta sama</item>
+        <item>o tej samej porze każdego dnia</item>
+        <item>25. Właśnie zmieniłeś(-aś) pracę i poznałeś(-aś) wiele nowych osób z personelu. Jedna z nich dzwoni do ciebie do domu:</item>
+        <item>z łatwością rozpoznajesz głos</item>
+        <item>rozpoznajesz w połowie rozmowy</item>
+        <item>masz trudności z rozpoznaniem głosu</item>
+        <item>26. Co cię najbardziej denerwuje, kiedy się z kimś kłócisz ?</item>
+        <item>milczenie lub brak reakcji</item>
+        <item>kiedy nie rozumie twojego punktu widzenia</item>
+        <item>złośliwe pytania lub komentarze</item>
+        <item>27. Jak w szkole traktowałeś(-aś) klasówki z ortografii lub pisanie wypracowań ?</item>
+        <item>uważałeś(-aś) za stosunkowo łatwe</item>
+        <item>nie było zbyt trudne, ale wolałeś(-aś) raczej klasówki z ortografii niż wypracowania</item>
+        <item>ani w jednym, ani w drugim nie byłeś(-aś) za dobry(-a)</item>
+        <item>28. Kiedy już przychodzi do tańca lub gimnastyki przy muzyce:</item>
+        <item>"wyczuwasz" muzykę, kiedy już poznasz kroki</item>
+        <item>możesz wykonać niektóre ćwiczenia lub tańce, ale gubisz się przy innych</item>
+        <item>masz trudności w utrzymaniu tempa i rytmu</item>
+        <item>29. Jak dobry(-a) jesteś w naśladowaniu i rozpoznawianiu głosów zwierząt</item>
+        <item>niezbyt</item>
+        <item>może być</item>
+        <item>bardzo dobry(-a)</item>
+        <item>30. Pod koniec długiego dnia najchętniej:</item>
+        <item>rozmawiasz z przyjaciółmi lub rodziną, jak minął</item>
+        <item>słuchasz opowieści innych o ich dniu</item>
+        <item>czytasz gazetę, oglądasz telewizję i nic nie mówisz</item>
+    </string-array>
+</resources>
