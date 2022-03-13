@@ -3,10 +3,10 @@ package com.androbrain.brainsex.core
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.createGraph
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.fragment
 import com.androbrain.brainsex.R
+import com.androbrain.brainsex.data.TestDataCreator
 import com.androbrain.brainsex.navigation.Routes
 import com.androbrain.brainsex.ui.test.TestFragment
 
