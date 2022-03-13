@@ -9,7 +9,9 @@ import com.androbrain.brainsex.R
 import com.androbrain.brainsex.data.TestDataCreator
 import com.androbrain.brainsex.navigation.Routes
 import com.androbrain.brainsex.ui.test.TestFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

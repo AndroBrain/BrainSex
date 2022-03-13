@@ -14,6 +14,7 @@ private const val C_FEMALE_POINTS = 10
 
 class TestDataCreator {
     companion object {
+        //        TODO figure out a better way to create these questions
         fun getBrainSexQuestions(resources: Resources, isMale: Boolean): List<QuestionWithAnswers> =
             resources.getStringArray(R.array.brain_sex_questions)
                 .toList()

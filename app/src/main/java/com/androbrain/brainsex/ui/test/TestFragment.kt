@@ -1,6 +1,7 @@
 package com.androbrain.brainsex.ui.test
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +14,13 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.androbrain.brainsex.data.TestDataCreator
 import com.androbrain.brainsex.databinding.FragmentTestBinding
 import com.androbrain.brainsex.extension.animateProgressCompat
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 private const val NUMBER_OF_QUESTIONS = 30
 
+@AndroidEntryPoint
 class TestFragment : Fragment() {
 
     private var _binding: FragmentTestBinding? = null
@@ -51,6 +54,7 @@ class TestFragment : Fragment() {
                 viewModel.state.collect { state ->
                     val data = TestDataCreator.getBrainSexQuestions(resources, false)
                     val answerWithQuestion = data.getOrNull(state.currentQuestionIndex)
+                    buttonNext.isEnabled = state.selectedButtonId != null
 
                     if (answerWithQuestion == null) {
 //                        TODO show end screen

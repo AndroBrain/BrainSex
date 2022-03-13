@@ -3,6 +3,8 @@ package com.androbrain.brainsex.ui.test
 import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.androbrain.brainsex.di.MaleTest
+import com.androbrain.brainsex.model.QuestionWithAnswers
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,17 +15,22 @@ private const val KEY_STATE = "STATE"
 
 @HiltViewModel
 class TestViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle,
+    @MaleTest private val testQA: List<QuestionWithAnswers>,
 ) : ViewModel() {
     private val _state = MutableStateFlow(savedStateHandle.get(KEY_STATE) ?: TestState.Initial)
     val state = _state.asStateFlow()
 
     fun nextQuestionClicked() {
         _state.update {
-            it.copy(
-                currentQuestionIndex = it.currentQuestionIndex + 1,
-                selectedButtonId = null
-            )
+            if (it.selectedButtonId == null)
+                it
+            else
+                it.copy(
+                    currentQuestionIndex = it.currentQuestionIndex + 1,
+                    selectedButtonId = null,
+                    points = it.points + testQA[it.currentQuestionIndex].answers[it.selectedButtonId].pointsForAnswer
+                )
         }
     }
 
