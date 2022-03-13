@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -11,8 +12,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.androbrain.brainsex.data.TestDataCreator
 import com.androbrain.brainsex.databinding.FragmentTestBinding
+import com.androbrain.brainsex.extension.animateProgressCompat
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+
+private const val NUMBER_OF_QUESTIONS = 30
 
 class TestFragment : Fragment() {
 
@@ -27,9 +31,14 @@ class TestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentTestBinding.inflate(layoutInflater)
+        setupViews()
         setupActions()
         setupObservers()
         return binding.root
+    }
+
+    private fun setupViews() = with(binding) {
+        progressIndicator.max = NUMBER_OF_QUESTIONS
     }
 
     private fun setupActions() = with(binding) {
@@ -48,10 +57,24 @@ class TestFragment : Fragment() {
                         return@collect
                     }
 
+                    progressIndicator.animateProgressCompat(state.currentQuestionIndex + 1)
+
+                    containerAnswers.removeAllViews()
+                    answerWithQuestion.answers.forEachIndexed { index, (answerText, _) ->
+                        containerAnswers.addView(RadioButton(requireContext()).apply {
+                            id = index
+                            if (id == state.selectedButtonId) {
+                                isChecked = true
+                            }
+                            text = answerText
+                            setOnCheckedChangeListener { _, isChecked ->
+                                if (isChecked) {
+                                    viewModel.updateSelectedButtonId(id)
+                                }
+                            }
+                        })
+                    }
                     textQuestion.text = answerWithQuestion.question
-                    answerA.text = answerWithQuestion.answers[0].text
-                    answerB.text = answerWithQuestion.answers[1].text
-                    answerC.text = answerWithQuestion.answers[2].text
                 }
             }
         }

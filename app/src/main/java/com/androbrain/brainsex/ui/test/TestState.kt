@@ -1,12 +1,14 @@
 package com.androbrain.brainsex.ui.test
 
 data class TestState(
-    val currentQuestionIndex: Int
+    val currentQuestionIndex: Int,
+    val selectedButtonId: Int?
 ) {
     companion object {
-        val Initial
+        val Initial: TestState
             get() = TestState(
-                currentQuestionIndex = 0
+                currentQuestionIndex = 0,
+                selectedButtonId = null
             )
     }
 }

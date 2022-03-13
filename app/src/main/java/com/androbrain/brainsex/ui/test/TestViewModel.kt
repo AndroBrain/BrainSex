@@ -1,10 +1,12 @@
 package com.androbrain.brainsex.ui.test
 
+import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 private const val KEY_STATE = "STATE"
@@ -17,7 +19,18 @@ class TestViewModel @Inject constructor(
     val state = _state.asStateFlow()
 
     fun nextQuestionClicked() {
-        _state.value = state.value.copy(currentQuestionIndex = state.value.currentQuestionIndex + 1)
+        _state.update {
+            it.copy(
+                currentQuestionIndex = it.currentQuestionIndex + 1,
+                selectedButtonId = null
+            )
+        }
+    }
+
+    fun updateSelectedButtonId(@IdRes buttonId: Int) {
+        _state.update {
+            it.copy(selectedButtonId = buttonId)
+        }
     }
 
     override fun onCleared() {
