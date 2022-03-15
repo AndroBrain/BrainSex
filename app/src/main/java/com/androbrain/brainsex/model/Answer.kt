@@ -1,6 +1,10 @@
 package com.androbrain.brainsex.model
 
-data class Answer(
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+@JvmInline
+value class Answer(
     val text: String,
-    val pointsForAnswer: Int
-)
+) : Parcelable

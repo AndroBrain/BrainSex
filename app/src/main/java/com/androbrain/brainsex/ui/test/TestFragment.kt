@@ -1,19 +1,19 @@
 package com.androbrain.brainsex.ui.test
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.androbrain.brainsex.data.TestDataCreator
 import com.androbrain.brainsex.databinding.FragmentTestBinding
 import com.androbrain.brainsex.extension.animateProgressCompat
+import com.androbrain.brainsex.model.QuestionWithAnswers
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -35,8 +35,8 @@ class TestFragment : Fragment() {
     ): View {
         _binding = FragmentTestBinding.inflate(layoutInflater)
         setupViews()
-        setupActions()
         setupObservers()
+        viewModel.loadData()
         return binding.root
     }
 
@@ -44,43 +44,48 @@ class TestFragment : Fragment() {
         progressIndicator.max = NUMBER_OF_QUESTIONS
     }
 
-    private fun setupActions() = with(binding) {
-        buttonNext.setOnClickListener { viewModel.nextQuestionClicked() }
-    }
-
     private fun setupObservers() = with(binding) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect { state ->
-                    val data = TestDataCreator.getBrainSexQuestions(resources, false)
-                    val answerWithQuestion = data.getOrNull(state.currentQuestionIndex)
+
+//                    TODO why not just handle the gender in different fragment?
+                    val answerWithQuestions = state.answerWithQuestions
                     buttonNext.isEnabled = state.selectedButtonId != null
 
-                    if (answerWithQuestion == null) {
+                    if (answerWithQuestions == null) {
 //                        TODO show end screen
                         return@collect
                     }
 
                     progressIndicator.animateProgressCompat(state.currentQuestionIndex + 1)
 
-                    containerAnswers.removeAllViews()
-                    answerWithQuestion.answers.forEachIndexed { index, (answerText, _) ->
-                        containerAnswers.addView(RadioButton(requireContext()).apply {
-                            id = index
-                            if (id == state.selectedButtonId) {
-                                isChecked = true
-                            }
-                            text = answerText
-                            setOnCheckedChangeListener { _, isChecked ->
-                                if (isChecked) {
-                                    viewModel.updateSelectedButtonId(id)
-                                }
-                            }
-                        })
-                    }
-                    textQuestion.text = answerWithQuestion.question
+                    setupAnswers(answerWithQuestions, state.selectedButtonId)
+                    textQuestion.text = answerWithQuestions.question
+                    buttonNext.setOnClickListener { viewModel.nextQuestionClicked() }
                 }
             }
+        }
+    }
+
+    private fun setupAnswers(
+        answerWithQuestion: QuestionWithAnswers,
+        @IdRes selectedButtonId: Int?
+    ) = with(binding) {
+        containerAnswers.removeAllViews()
+        answerWithQuestion.answers.forEachIndexed { index, answer ->
+            containerAnswers.addView(RadioButton(requireContext()).apply {
+                id = index
+                if (id == selectedButtonId) {
+                    isChecked = true
+                }
+                text = answer.text
+                setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked) {
+                        viewModel.updateSelectedButtonId(id)
+                    }
+                }
+            })
         }
     }
 

@@ -2,12 +2,14 @@ package com.androbrain.brainsex.core
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavType
 import androidx.navigation.createGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.fragment
 import com.androbrain.brainsex.R
-import com.androbrain.brainsex.data.TestDataCreator
+import com.androbrain.brainsex.navigation.Arguments
 import com.androbrain.brainsex.navigation.Routes
+import com.androbrain.brainsex.ui.choosegender.ChooseGenderFragment
 import com.androbrain.brainsex.ui.test.TestFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,9 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         val navController = navHostFragment.navController
         navController.graph = navController.createGraph(
-            startDestination = Routes.test
+            startDestination = Routes.choose_gender
         ) {
-            fragment<TestFragment>(Routes.test)
+            fragment<TestFragment>(
+                "${Routes.test}/{${Arguments.gender}}"
+            ) {
+                argument(Arguments.gender) {
+                    type = NavType.StringType
+                }
+            }
+
+            fragment<ChooseGenderFragment>(Routes.choose_gender)
         }
     }
 

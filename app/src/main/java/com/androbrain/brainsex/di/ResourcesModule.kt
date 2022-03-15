@@ -8,31 +8,15 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Qualifier
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class MaleTest
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class FemaleTest
 
 @Module
 @InstallIn(SingletonComponent::class)
 object ResourcesModule {
 
     @Provides
-    @MaleTest
-    fun provideMaleBrainSexQuestions(
+    fun provideBrainSexQuestions(
         @ApplicationContext context: Context
     ): List<QuestionWithAnswers> =
-        TestDataCreator.getBrainSexQuestions(context.resources, true)
+        TestDataCreator.getBrainSexQuestions(context.resources)
 
-    @Provides
-    @FemaleTest
-    fun provideFemaleBrainSexQuestions(
-        @ApplicationContext context: Context
-    ): List<QuestionWithAnswers> =
-        TestDataCreator.getBrainSexQuestions(context.resources, false)
 }
