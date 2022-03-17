@@ -4,7 +4,7 @@ import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.androbrain.brainsex.model.QuestionWithAnswers
-import com.androbrain.brainsex.navigation.Arguments
+import com.androbrain.brainsex.navigation.nav_arguments
 import com.androbrain.brainsex.ui.choosegender.Gender
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -32,7 +32,7 @@ class TestViewModel @Inject constructor(
     fun loadData() {
         _state.update {
             it.copy(
-                gender = Gender.valueOf(savedStateHandle.get<String>(Arguments.gender)!!),
+                gender = Gender.valueOf(savedStateHandle.get<String>(nav_arguments.gender)!!),
                 answerWithQuestions = testData.getOrNull(it.currentQuestionIndex)
             )
         }

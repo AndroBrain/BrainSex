@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.androbrain.brainsex.databinding.FragmentChooseGenderBinding
-import com.androbrain.brainsex.navigation.Routes
+import com.androbrain.brainsex.navigation.nav_routes
 
 class ChooseGenderFragment : Fragment() {
 
@@ -26,11 +26,11 @@ class ChooseGenderFragment : Fragment() {
 
     private fun setupActions() = with(binding) {
         buttonMale.setOnClickListener {
-            findNavController().navigate("${Routes.test}/${Gender.MALE}")
+            findNavController().navigate("${nav_routes.test}/${Gender.MALE}")
         }
 
         buttonFemale.setOnClickListener {
-            findNavController().navigate("${Routes.test}/${Gender.FEMALE}")
+            findNavController().navigate("${nav_routes.test}/${Gender.FEMALE}")
         }
     }
 

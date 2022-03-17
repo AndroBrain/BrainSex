@@ -11,9 +11,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.androbrain.brainsex.databinding.FragmentTestBinding
 import com.androbrain.brainsex.extension.animateProgressCompat
 import com.androbrain.brainsex.model.QuestionWithAnswers
+import com.androbrain.brainsex.navigation.nav_routes
+import com.androbrain.brainsex.ui.choosegender.Gender
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -42,15 +45,16 @@ class TestFragment : Fragment() {
 
     private fun setupViews() = with(binding) {
         progressIndicator.max = NUMBER_OF_QUESTIONS
+        buttonNext.setOnClickListener { viewModel.nextQuestionClicked() }
     }
 
     private fun setupObservers() = with(binding) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId) ->
+                viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
 
                     if (answerWithQuestions == null) {
-//                        TODO show end screen
+                        findNavController().navigate("${nav_routes.result}/$points")
                         return@collect
                     }
 
@@ -58,7 +62,6 @@ class TestFragment : Fragment() {
 
                     setupAnswers(answerWithQuestions, selectedButtonId)
                     textQuestion.text = answerWithQuestions.question
-                    buttonNext.setOnClickListener { viewModel.nextQuestionClicked() }
                 }
             }
         }

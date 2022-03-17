@@ -1,5 +1,6 @@
 package com.androbrain.brainsex.navigation
 
-object Arguments {
+object nav_arguments {
     const val gender = "gender"
+    const val points = "points"
 }
