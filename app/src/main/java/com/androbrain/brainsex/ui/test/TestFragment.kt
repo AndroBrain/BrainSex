@@ -47,20 +47,16 @@ class TestFragment : Fragment() {
     private fun setupObservers() = with(binding) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.state.collect { state ->
-
-//                    TODO why not just handle the gender in different fragment?
-                    val answerWithQuestions = state.answerWithQuestions
-                    buttonNext.isEnabled = state.selectedButtonId != null
+                viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId) ->
 
                     if (answerWithQuestions == null) {
 //                        TODO show end screen
                         return@collect
                     }
 
-                    progressIndicator.animateProgressCompat(state.currentQuestionIndex + 1)
+                    progressIndicator.animateProgressCompat(currentQuestionIndex + 1)
 
-                    setupAnswers(answerWithQuestions, state.selectedButtonId)
+                    setupAnswers(answerWithQuestions, selectedButtonId)
                     textQuestion.text = answerWithQuestions.question
                     buttonNext.setOnClickListener { viewModel.nextQuestionClicked() }
                 }

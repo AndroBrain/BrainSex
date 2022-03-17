@@ -19,6 +19,7 @@ private const val A_POINTS = -5
 private const val B_POINTS = 5
 private const val C_MALE_POINTS = 15
 private const val C_FEMALE_POINTS = 10
+private const val NO_ANSWER_POINTS = 5
 
 @HiltViewModel
 class TestViewModel @Inject constructor(
@@ -39,15 +40,12 @@ class TestViewModel @Inject constructor(
 
     fun nextQuestionClicked() {
         _state.update {
-            if (it.selectedButtonId == null)
-                it
-            else
-                it.copy(
-                    currentQuestionIndex = it.currentQuestionIndex + 1,
-                    answerWithQuestions = testData.getOrNull(it.currentQuestionIndex + 1),
-                    selectedButtonId = null,
-                    points = it.points + getPointsByIndex(it)
-                )
+            it.copy(
+                currentQuestionIndex = it.currentQuestionIndex + 1,
+                answerWithQuestions = testData.getOrNull(it.currentQuestionIndex + 1),
+                selectedButtonId = null,
+                points = it.points + getPointsByIndex(it)
+            )
         }
     }
 
@@ -66,7 +64,7 @@ class TestViewModel @Inject constructor(
                 Gender.FEMALE -> C_FEMALE_POINTS
                 else -> 0
             }
-            else -> 0
+            else -> NO_ANSWER_POINTS
         }
 
     override fun onCleared() {
