@@ -4,12 +4,12 @@ import android.content.res.Resources
 import com.androbrain.brainsex.R
 import com.androbrain.brainsex.model.Answer
 import com.androbrain.brainsex.model.QuestionWithAnswers
+import java.util.*
 
 private const val ANSWER_WITH_QUESTIONS_SIZE = 4
 
 class TestDataCreator {
     companion object {
-        //        TODO figure out a better way to create these questions
         fun getBrainSexQuestions(resources: Resources): List<QuestionWithAnswers> =
             resources.getStringArray(R.array.brain_sex_questions)
                 .toList()
@@ -18,11 +18,18 @@ class TestDataCreator {
                     QuestionWithAnswers(
                         question = questionWithAnswers.first(),
                         answers = listOf(
-                            Answer(questionWithAnswers[1]),
-                            Answer(questionWithAnswers[2]),
-                            Answer(questionWithAnswers[3]),
+                            Answer(questionWithAnswers[1].capitalizeSentence()),
+                            Answer(questionWithAnswers[2].capitalizeSentence()),
+                            Answer(questionWithAnswers[3].capitalizeSentence()),
                         )
                     )
                 }
+
+        private fun String.capitalizeSentence() = replaceFirstChar {
+            if (it.isLowerCase())
+                it.titlecase(Locale.ROOT)
+            else
+                it.toString()
+        }
     }
 }
