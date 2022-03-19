@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Toolbar" parent="Widget.Material3.Toolbar" />
+
+    <style name="Toolbar.Default">
+        <item name="android:background">?colorPrimaryContainer</item>
+        <item name="titleTextColor">?colorOnPrimaryContainer</item>
+    </style>
+</resources>

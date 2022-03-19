@@ -2,5 +2,5 @@
 <resources>
     <dimen name="screen_spacing">16dp</dimen>
 
-    <dimen name="test_choice_spacing">16dp</dimen>
+    <dimen name="test_choice_spacing">8dp</dimen>
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import androidx.annotation.IdRes
 import androidx.core.view.doOnLayout
 import androidx.core.view.updateLayoutParams
@@ -77,6 +78,12 @@ class TestFragment : Fragment() {
         containerAnswers.removeAllViews()
         answerWithQuestion.answers.forEachIndexed { index, answer ->
             containerAnswers.addView(RadioButtonAnswerChoiceBinding.inflate(layoutInflater).root.apply {
+                doOnLayout {
+                    updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                        bottomMargin = resources.getDimensionPixelSize(R.dimen.test_choice_spacing)
+                    }
+                }
+
                 id = index
                 if (id == selectedButtonId) {
                     isChecked = true
