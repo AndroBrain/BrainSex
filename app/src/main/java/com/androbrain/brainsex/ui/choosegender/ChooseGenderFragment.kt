@@ -26,10 +26,12 @@ class ChooseGenderFragment : Fragment() {
 
     private fun setupActions() = with(binding) {
         buttonMale.setOnClickListener {
+            findNavController().popBackStack()
             findNavController().navigate("${nav_routes.test}/${Gender.MALE}")
         }
 
         buttonFemale.setOnClickListener {
+            findNavController().popBackStack()
             findNavController().navigate("${nav_routes.test}/${Gender.FEMALE}")
         }
     }

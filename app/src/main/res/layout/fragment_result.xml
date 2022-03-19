@@ -11,5 +11,4 @@
         android:gravity="center"
         tools:text="Your result is 15 points" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,19 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import androidx.annotation.IdRes
+import androidx.core.view.doOnLayout
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.androbrain.brainsex.R
 import com.androbrain.brainsex.databinding.FragmentTestBinding
+import com.androbrain.brainsex.databinding.RadioButtonAnswerChoiceBinding
 import com.androbrain.brainsex.extension.animateProgressCompat
 import com.androbrain.brainsex.model.QuestionWithAnswers
 import com.androbrain.brainsex.navigation.nav_routes
-import com.androbrain.brainsex.ui.choosegender.Gender
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -54,6 +56,7 @@ class TestFragment : Fragment() {
                 viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
 
                     if (answerWithQuestions == null) {
+                        findNavController().popBackStack()
                         findNavController().navigate("${nav_routes.result}/$points")
                         return@collect
                     }
@@ -73,7 +76,7 @@ class TestFragment : Fragment() {
     ) = with(binding) {
         containerAnswers.removeAllViews()
         answerWithQuestion.answers.forEachIndexed { index, answer ->
-            containerAnswers.addView(RadioButton(requireContext()).apply {
+            containerAnswers.addView(RadioButtonAnswerChoiceBinding.inflate(layoutInflater).root.apply {
                 id = index
                 if (id == selectedButtonId) {
                     isChecked = true
