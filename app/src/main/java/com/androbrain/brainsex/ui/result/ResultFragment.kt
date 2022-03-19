@@ -24,7 +24,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun setupViews() = with(binding) {
-        textResult.text = arguments?.getString(nav_arguments.points)
+        textScore.text = arguments?.getString(nav_arguments.points)
     }
 
     override fun onDestroyView() {

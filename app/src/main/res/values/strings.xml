@@ -5,4 +5,5 @@
     <string name="choose_gender_female">Kobietą</string>
     <string name="choose_gender_male">Mężyczną</string>
     <string name="choose_gender_title">Jestem:</string>
+    <string name="share">Udostępnij swój wynik</string>
 </resources>
