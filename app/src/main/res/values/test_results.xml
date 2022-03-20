@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="result_more_than_300_title">Mózg bardzo kobiecy</string>
+
+    <string name="result_180_300_title">Mózg kobiecy</string>
+    <string name="result_more_than_180_description">Im wyższa liczba punktów, tym bardziej kobiecy mózg i tym większe prawdopodobieństwo, że ta osoba będzie miała duże talenty twórcze, artystyczne i muzyczne. Większość decyzji podejmuje na podstawie intuicji lub przeczuć i dobrze rozpoznaje źródła kłopotów, używający przy tym minimalnych danych. Dobrze również rozwiązuje problemy, stosując przy tym twórcze myślenie i zrozumienie. Jeśli mężczyzna uzyskuje wynik powyżej 180 punktów, bardzo prawdopodobne, że będzie gejem.</string>
+
+    <string name="result_150_180_title">Strefa wspólna</string>
+    <string name="result_150_180_description">Twój wynik wykazuje podobieństwo sposobu myślenia do obu płci lub skłonność do biseksualizmu. Te osoby nie wykazują uprzedzeń zarówno wobec męskiego, jak i kobiecego sposobu rozumowania, zazwyczaj więc wykazują się elastycznością myślenia, co może być itotną zaletą w grupie zamierzającej znaleźć rozwiązanie jakiegoś problemu . Mają również zdolność nawiązywania przyjaźni zarówno z kobietami, jak i mężczyznami.</string>
+
+    <string name="result_0_150_title">Mózg męski</string>
+    <string name="result_0_150_description">Te osoby miewają rozwinięte zdolności logiczne, analityczne i werbalne, bywają zdyscyplinowane i dobrze zorganizowane. Im wynik bliższy zera tym człowiek jest lepszy w przewidywaniu kosztów i skutków na podstawie danych statystycznych. Emocje mają tu niewielki wpływ.</string>
+
+    <string name="result_less_than_0_title">Mózg bardzo męski</string>
+    <string name="result_less_than_0_description">Taki wynik dowodzi, że duże ilości testosteronu pojawiły się na wczesnym etapie rozwoju płodu. Im niższy wynik kobiety, tym większe prawdopodobieństwo występowania skłonności lesbijskich.</string>
+</resources>
