@@ -1,5 +1,6 @@
 package com.androbrain.brainsex.ui.result
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ class ResultFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val testResult by lazy { createTestResult() }
+    private val points by lazy { arguments?.getString(nav_arguments.points)!! }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,17 +26,31 @@ class ResultFragment : Fragment() {
     ): View {
         _binding = FragmentResultBinding.inflate(layoutInflater)
         setupViews()
+        setupActions()
         return binding.root
     }
 
     private fun setupViews() = with(binding) {
         textTitle.text = testResult.title
         textDescription.text = testResult.description
-        textScore.text = arguments?.getString(nav_arguments.points)!!
+        textScore.text = arguments?.getString(nav_arguments.points)
+    }
+
+    private fun setupActions() = with(binding) {
+        buttonShare.setOnClickListener {
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, testResult.description)
+                putExtra(Intent.EXTRA_TITLE, "$points\n${testResult.title}")
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
     }
 
     private fun createTestResult(): TestResult {
-        val points = arguments?.getString(nav_arguments.points)!!.toInt()
+        val points = points.toInt()
         return when {
             points > 300 -> TestResult(
                 title = getString(R.string.result_more_than_300_title),
