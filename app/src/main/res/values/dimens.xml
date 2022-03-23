@@ -3,4 +3,6 @@
     <dimen name="screen_spacing">16dp</dimen>
 
     <dimen name="test_choice_spacing">8dp</dimen>
+
+    <dimen name="main_menu_logo_size">170dp</dimen>
 </resources>
