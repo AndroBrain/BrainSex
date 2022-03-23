@@ -15,10 +15,10 @@ import javax.inject.Inject
 
 private const val KEY_STATE = "STATE"
 
-private const val A_POINTS = -5
+private const val A_MALE_POINTS = 15
+private const val A_FEMALE_POINTS = 10
 private const val B_POINTS = 5
-private const val C_MALE_POINTS = 15
-private const val C_FEMALE_POINTS = 10
+private const val C_POINTS = -5
 private const val NO_ANSWER_POINTS = 5
 
 @HiltViewModel
@@ -57,13 +57,13 @@ class TestViewModel @Inject constructor(
 
     private fun getPointsByIndex(currentState: TestState): Int =
         when (currentState.selectedButtonId) {
-            0 -> A_POINTS
-            1 -> B_POINTS
-            2 -> when (currentState.gender) {
-                Gender.MALE -> C_MALE_POINTS
-                Gender.FEMALE -> C_FEMALE_POINTS
+            0 -> when (currentState.gender) {
+                Gender.MALE -> A_MALE_POINTS
+                Gender.FEMALE -> A_FEMALE_POINTS
                 else -> 0
             }
+            1 -> B_POINTS
+            2 -> C_POINTS
             else -> NO_ANSWER_POINTS
         }
 
