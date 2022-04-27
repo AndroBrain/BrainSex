@@ -1,8 +1,8 @@
-package com.androbrain.brainsex.ui.test
+package com.androbrain.brainsex.feature.test
 
 import android.os.Parcelable
-import com.androbrain.brainsex.model.QuestionWithAnswers
-import com.androbrain.brainsex.ui.choosegender.Gender
+import com.androbrain.brainsex.core.QuestionWithAnswers
+import com.androbrain.brainsex.feature.choosegender.Gender
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

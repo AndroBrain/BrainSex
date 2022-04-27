@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.core
+package com.androbrain.brainsex
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

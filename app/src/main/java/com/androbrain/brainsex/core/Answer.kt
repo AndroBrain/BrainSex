@@ -1,10 +1,10 @@
-package com.androbrain.brainsex.model
+package com.androbrain.brainsex.core
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@JvmInline
-value class Answer(
+data class Answer(
     val text: String,
+    val points: Int
 ) : Parcelable

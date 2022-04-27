@@ -2,9 +2,9 @@ package com.androbrain.brainsex.data
 
 import android.content.res.Resources
 import com.androbrain.brainsex.R
-import com.androbrain.brainsex.model.Answer
-import com.androbrain.brainsex.model.QuestionWithAnswers
-import java.util.*
+import com.androbrain.brainsex.extension.capitalizeSentence
+import com.androbrain.brainsex.core.Answer
+import com.androbrain.brainsex.core.QuestionWithAnswers
 
 private const val ANSWER_WITH_QUESTIONS_SIZE = 4
 
@@ -18,18 +18,11 @@ class TestDataCreator {
                     QuestionWithAnswers(
                         question = questionWithAnswers.first(),
                         answers = listOf(
-                            Answer(questionWithAnswers[1].capitalizeSentence()),
-                            Answer(questionWithAnswers[2].capitalizeSentence()),
-                            Answer(questionWithAnswers[3].capitalizeSentence()),
+                            Answer(questionWithAnswers[1].capitalizeSentence(), 5),
+                            Answer(questionWithAnswers[2].capitalizeSentence(), 10),
+                            Answer(questionWithAnswers[3].capitalizeSentence(), 15),
                         )
                     )
                 }
-
-        private fun String.capitalizeSentence() = replaceFirstChar {
-            if (it.isLowerCase())
-                it.titlecase(Locale.ROOT)
-            else
-                it.toString()
-        }
     }
 }

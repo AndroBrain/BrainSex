@@ -1,11 +1,11 @@
-package com.androbrain.brainsex.ui.test
+package com.androbrain.brainsex.feature.test
 
 import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.androbrain.brainsex.model.QuestionWithAnswers
+import com.androbrain.brainsex.core.QuestionWithAnswers
 import com.androbrain.brainsex.navigation.nav_arguments
-import com.androbrain.brainsex.ui.choosegender.Gender
+import com.androbrain.brainsex.feature.choosegender.Gender
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

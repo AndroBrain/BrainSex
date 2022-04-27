@@ -2,7 +2,7 @@ package com.androbrain.brainsex.di
 
 import android.content.Context
 import com.androbrain.brainsex.data.TestDataCreator
-import com.androbrain.brainsex.model.QuestionWithAnswers
+import com.androbrain.brainsex.core.QuestionWithAnswers
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

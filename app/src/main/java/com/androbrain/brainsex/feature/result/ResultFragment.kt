@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.ui.result
+package com.androbrain.brainsex.feature.result
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.androbrain.brainsex.R
 import com.androbrain.brainsex.databinding.FragmentResultBinding
-import com.androbrain.brainsex.model.TestResult
+import com.androbrain.brainsex.core.TestResult
 import com.androbrain.brainsex.navigation.nav_arguments
 
 class ResultFragment : Fragment() {

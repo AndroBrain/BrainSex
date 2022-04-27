@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.model
+package com.androbrain.brainsex.core
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

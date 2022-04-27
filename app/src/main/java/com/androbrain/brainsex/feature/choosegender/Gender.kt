@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.ui.choosegender
+package com.androbrain.brainsex.feature.choosegender
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

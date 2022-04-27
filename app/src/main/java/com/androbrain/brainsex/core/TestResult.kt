@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.model
+package com.androbrain.brainsex.core
 
 data class TestResult(
     val title: String,

@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.core
+package com.androbrain.brainsex
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,13 +6,12 @@ import androidx.navigation.NavType
 import androidx.navigation.createGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.fragment
-import com.androbrain.brainsex.R
 import com.androbrain.brainsex.navigation.nav_arguments
 import com.androbrain.brainsex.navigation.nav_routes
-import com.androbrain.brainsex.ui.choosegender.ChooseGenderFragment
-import com.androbrain.brainsex.ui.menu.MainMenuFragment
-import com.androbrain.brainsex.ui.result.ResultFragment
-import com.androbrain.brainsex.ui.test.TestFragment
+import com.androbrain.brainsex.feature.choosegender.ChooseGenderFragment
+import com.androbrain.brainsex.feature.menu.MainMenuFragment
+import com.androbrain.brainsex.feature.result.ResultFragment
+import com.androbrain.brainsex.feature.test.TestFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

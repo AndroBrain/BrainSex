@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.ui.choosegender
+package com.androbrain.brainsex.feature.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.androbrain.brainsex.databinding.FragmentChooseGenderBinding
+import com.androbrain.brainsex.databinding.FragmentMainMenuBinding
 import com.androbrain.brainsex.navigation.nav_routes
 
-class ChooseGenderFragment : Fragment() {
+class MainMenuFragment : Fragment() {
 
-    private var _binding: FragmentChooseGenderBinding? = null
+    private var _binding: FragmentMainMenuBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,20 +19,14 @@ class ChooseGenderFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentChooseGenderBinding.inflate(layoutInflater)
+        _binding = FragmentMainMenuBinding.inflate(layoutInflater)
         setupActions()
         return binding.root
     }
 
     private fun setupActions() = with(binding) {
-        buttonMale.setOnClickListener {
-            findNavController().popBackStack()
-            findNavController().navigate("${nav_routes.test}/${Gender.MALE}")
-        }
-
-        buttonFemale.setOnClickListener {
-            findNavController().popBackStack()
-            findNavController().navigate("${nav_routes.test}/${Gender.FEMALE}")
+        buttonStartTest.setOnClickListener {
+            findNavController().navigate(nav_routes.choose_gender)
         }
     }
 
@@ -40,5 +34,4 @@ class ChooseGenderFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

@@ -1,10 +1,9 @@
-package com.androbrain.brainsex.ui.test
+package com.androbrain.brainsex.feature.test
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import androidx.annotation.IdRes
 import androidx.core.view.doOnLayout
 import androidx.core.view.updateLayoutParams
@@ -18,7 +17,7 @@ import com.androbrain.brainsex.R
 import com.androbrain.brainsex.databinding.FragmentTestBinding
 import com.androbrain.brainsex.databinding.RadioButtonAnswerChoiceBinding
 import com.androbrain.brainsex.extension.animateProgressCompat
-import com.androbrain.brainsex.model.QuestionWithAnswers
+import com.androbrain.brainsex.core.QuestionWithAnswers
 import com.androbrain.brainsex.navigation.nav_routes
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
