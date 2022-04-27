@@ -1,9 +1,8 @@
 package com.androbrain.brainsex.di
 
 import android.content.Context
-import com.androbrain.brainsex.core.QuestionWithAnswers
-import com.androbrain.brainsex.core.gender.Gender
-import com.androbrain.brainsex.data.TestDataCreator
+import com.androbrain.brainsex.data.TestLocalDataSource
+import com.androbrain.brainsex.data.TestLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,12 +11,10 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ResourcesModule {
+object DataSourceModule {
 
     @Provides
-    fun provideBrainSexQuestions(
+    fun provideTestLocalDataSource(
         @ApplicationContext context: Context
-    ): List<QuestionWithAnswers<Gender>> =
-        TestDataCreator.getBrainSexQuestions(context.resources)
-
+    ): TestLocalDataSource = TestLocalDataSourceImpl(context)
 }

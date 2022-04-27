@@ -1,10 +1,11 @@
 package com.androbrain.brainsex.feature.test
 
+import android.util.Log
 import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.androbrain.brainsex.core.QuestionWithAnswers
 import com.androbrain.brainsex.core.gender.Gender
+import com.androbrain.brainsex.data.TestRepository
 import com.androbrain.brainsex.navigation.nav_arguments
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,17 +21,19 @@ private const val NO_ANSWER_POINTS = 5
 @HiltViewModel
 class TestViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    private val testData: List<QuestionWithAnswers<Gender>>,
+    testRepository: TestRepository
 ) : ViewModel() {
     private val _state =
         MutableStateFlow(savedStateHandle.get(KEY_STATE) ?: GenderTestState.Initial)
     val stateGender: StateFlow<GenderTestState> = _state.asStateFlow()
 
+    val questionsWithAnswers = testRepository.getGenderTest()
+
     fun loadData() {
         _state.update {
             it.copy(
                 gender = Gender.valueOf(savedStateHandle.get<String>(nav_arguments.gender)!!),
-                answerWithQuestions = testData.getOrNull(it.currentQuestionIndex)
+                answerWithQuestions = questionsWithAnswers.getOrNull(it.currentQuestionIndex)
             )
         }
     }
@@ -39,11 +42,12 @@ class TestViewModel @Inject constructor(
         _state.update {
             it.copy(
                 currentQuestionIndex = it.currentQuestionIndex + 1,
-                answerWithQuestions = testData.getOrNull(it.currentQuestionIndex + 1),
+                answerWithQuestions = questionsWithAnswers.getOrNull(it.currentQuestionIndex + 1),
                 selectedButtonId = null,
                 points = it.points + getPointsByIndex(it)
             )
         }
+        Log.d("TestData", _state.value.toString())
     }
 
     fun updateSelectedButtonId(@IdRes buttonId: Int) {
