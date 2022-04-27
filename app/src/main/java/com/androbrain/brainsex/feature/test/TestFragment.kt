@@ -1,6 +1,7 @@
 package com.androbrain.brainsex.feature.test
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,10 +15,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.androbrain.brainsex.R
+import com.androbrain.brainsex.core.QuestionWithAnswers
+import com.androbrain.brainsex.core.gender.Gender
 import com.androbrain.brainsex.databinding.FragmentTestBinding
 import com.androbrain.brainsex.databinding.RadioButtonAnswerChoiceBinding
 import com.androbrain.brainsex.extension.animateProgressCompat
-import com.androbrain.brainsex.core.QuestionWithAnswers
 import com.androbrain.brainsex.navigation.nav_routes
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -53,8 +55,7 @@ class TestFragment : Fragment() {
     private fun setupObservers() = with(binding) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
-
+                viewModel.stateGender.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
                     if (answerWithQuestions == null) {
                         findNavController().popBackStack()
                         findNavController().navigate("${nav_routes.result}/$points")
@@ -71,7 +72,7 @@ class TestFragment : Fragment() {
     }
 
     private fun setupAnswers(
-        answerWithQuestion: QuestionWithAnswers,
+        answerWithQuestion: QuestionWithAnswers<Gender>,
         @IdRes selectedButtonId: Int?
     ) = with(binding) {
         containerAnswers.removeAllViews()

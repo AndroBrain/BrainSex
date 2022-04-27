@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Answer(
+data class Answer<T>(
     val text: String,
-    val points: Int
+    val points: Points<T>
 ) : Parcelable

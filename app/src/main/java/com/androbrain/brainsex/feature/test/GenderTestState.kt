@@ -2,25 +2,25 @@ package com.androbrain.brainsex.feature.test
 
 import android.os.Parcelable
 import com.androbrain.brainsex.core.QuestionWithAnswers
-import com.androbrain.brainsex.feature.choosegender.Gender
+import com.androbrain.brainsex.core.gender.Gender
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class TestState(
+data class GenderTestState(
     val currentQuestionIndex: Int,
-    val answerWithQuestions: QuestionWithAnswers?,
+    val answerWithQuestions: QuestionWithAnswers<Gender>?,
     val selectedButtonId: Int?,
     val points: Int,
-    val gender: Gender,
+    val gender: Gender?,
 ) : Parcelable {
     companion object {
-        val Initial: TestState
-            get() = TestState(
+        val Initial: GenderTestState
+            get() = GenderTestState(
                 currentQuestionIndex = 0,
                 answerWithQuestions = null,
                 selectedButtonId = null,
                 points = 0,
-                gender = Gender.UNKNOWN,
+                gender = null
             )
     }
 }

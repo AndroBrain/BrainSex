@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.androbrain.brainsex.core.gender.Gender
 import com.androbrain.brainsex.databinding.FragmentChooseGenderBinding
 import com.androbrain.brainsex.navigation.nav_routes
 
