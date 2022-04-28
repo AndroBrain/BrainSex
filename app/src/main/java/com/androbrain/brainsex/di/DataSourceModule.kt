@@ -1,8 +1,8 @@
 package com.androbrain.brainsex.di
 
 import android.content.Context
-import com.androbrain.brainsex.data.TestLocalDataSource
-import com.androbrain.brainsex.data.TestLocalDataSourceImpl
+import com.androbrain.brainsex.data.datasource.TestLocalDataSource
+import com.androbrain.brainsex.data.datasource.TestLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

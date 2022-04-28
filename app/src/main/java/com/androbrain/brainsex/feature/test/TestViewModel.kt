@@ -5,7 +5,7 @@ import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.androbrain.brainsex.core.gender.Gender
-import com.androbrain.brainsex.data.TestRepository
+import com.androbrain.brainsex.data.repository.TestRepository
 import com.androbrain.brainsex.navigation.nav_arguments
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

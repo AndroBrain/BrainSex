@@ -1,8 +1,8 @@
 package com.androbrain.brainsex.di
 
-import com.androbrain.brainsex.data.TestLocalDataSource
-import com.androbrain.brainsex.data.TestRepository
-import com.androbrain.brainsex.data.TestRepositoryImpl
+import com.androbrain.brainsex.data.datasource.TestLocalDataSource
+import com.androbrain.brainsex.data.repository.TestRepository
+import com.androbrain.brainsex.data.repository.TestRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

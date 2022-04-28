@@ -1,4 +1,4 @@
-package com.androbrain.brainsex.data
+package com.androbrain.brainsex.data.datasource
 
 import android.content.Context
 import com.androbrain.brainsex.R
@@ -25,7 +25,7 @@ class TestLocalDataSourceImpl(private val context: Context) : TestLocalDataSourc
                     Answer(questionWithAnswers[1].capitalizeSentence(), GenderAPoints),
                     Answer(questionWithAnswers[2].capitalizeSentence(), GenderBPoints),
                     Answer(questionWithAnswers[3].capitalizeSentence(), GenderCPoints),
-                )
+                ).shuffled()
             )
         }
 }

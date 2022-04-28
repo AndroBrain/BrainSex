@@ -1,8 +1,8 @@
-package com.androbrain.brainsex.data
+package com.androbrain.brainsex.data.repository
 
 import com.androbrain.brainsex.core.QuestionWithAnswers
 import com.androbrain.brainsex.core.gender.Gender
 
-interface TestLocalDataSource {
+interface TestRepository {
     fun getGenderTest(): List<QuestionWithAnswers<Gender>>
 }
