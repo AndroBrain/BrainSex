@@ -7,4 +7,18 @@
         <item name="android:background">?colorPrimaryContainer</item>
         <item name="titleTextColor">?colorOnPrimaryContainer</item>
     </style>
+
+    <style name="Button" parent="Widget.Material3.Button" />
+
+    <style name="Button.Default">
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="Button.Outlined.Icon" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="iconGravity">textStart</item>
+    </style>
 </resources>

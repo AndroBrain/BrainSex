@@ -24,21 +24,21 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_male"
+        style="@style/Button.Default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/screen_spacing"
         android:layout_marginBottom="8dp"
         android:text="@string/choose_gender_male"
-        app:icon="@drawable/ic_male"
-        app:iconGravity="textStart" />
+        app:icon="@drawable/ic_male" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_female"
+        style="@style/Button.Default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/screen_spacing"
         android:text="@string/choose_gender_female"
-        app:icon="@drawable/ic_female"
-        app:iconGravity="textStart" />
+        app:icon="@drawable/ic_female" />
 
 </LinearLayout>

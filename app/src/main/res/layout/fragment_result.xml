@@ -51,7 +51,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_share"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+            style="@style/Button.Outlined.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -62,12 +62,12 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_menu"
+            style="@style/Button.Default"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:text="@string/return_to_menu"
-            app:icon="@drawable/ic_home"
-            app:iconGravity="textStart" />
+            app:icon="@drawable/ic_home" />
 
     </LinearLayout>
 
