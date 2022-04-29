@@ -11,7 +11,8 @@
         android:layout_width="@dimen/main_menu_logo_size"
         android:layout_height="@dimen/main_menu_logo_size"
         android:layout_marginTop="60dp"
-        android:src="@drawable/ic_brain" />
+        android:src="@drawable/ic_brain"
+        app:tint="?colorOnSurface" />
 
     <TextView
         android:layout_width="match_parent"
@@ -32,11 +33,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_start_test"
+        style="@style/Button.Default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="@string/start_test"
-        app:icon="@drawable/ic_play"
-        style="@style/Button.Default"/>
+        app:icon="@drawable/ic_play" />
 
 </LinearLayout>
