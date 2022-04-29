@@ -47,7 +47,6 @@ class TestViewModel @Inject constructor(
                 points = it.points + getPointsByIndex(it)
             )
         }
-        Log.d("TestData", _state.value.toString())
     }
 
     fun updateSelectedButtonId(@IdRes buttonId: Int) {
