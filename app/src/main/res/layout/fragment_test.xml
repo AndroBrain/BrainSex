@@ -37,12 +37,14 @@
         android:layout_weight="1"
         android:gravity="center_vertical" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/screen_spacing"
         android:layout_marginBottom="48dp"
-        android:text="@string/next_question" />
+        android:text="@string/next_question"
+        app:icon="@drawable/ic_next"
+        app:iconGravity="textStart" />
 
 </LinearLayout>
