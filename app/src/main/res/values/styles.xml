@@ -21,4 +21,23 @@
     <style name="Button.Outlined.Icon" parent="Widget.Material3.Button.OutlinedButton.Icon">
         <item name="iconGravity">textStart</item>
     </style>
+
+    <style name="TextView" parent="" />
+
+    <style name="TextView.Result.Symbol" parent="TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="drawableTint">?colorOnSurface</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="TextView.Result.Points" parent="TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>

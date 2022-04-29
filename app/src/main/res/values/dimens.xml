@@ -5,4 +5,8 @@
     <dimen name="test_choice_spacing">8dp</dimen>
 
     <dimen name="main_menu_logo_size">170dp</dimen>
+
+    <dimen name="indicator_points_corner">16dp</dimen>
+    <dimen name="indicator_points_height">8dp</dimen>
+    <dimen name="indicator_points_stroke_width">1dp</dimen>
 </resources>
