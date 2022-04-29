@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.androbrain.brainsex.R
-import com.androbrain.brainsex.databinding.FragmentResultBinding
 import com.androbrain.brainsex.core.TestResult
+import com.androbrain.brainsex.databinding.FragmentResultBinding
 import com.androbrain.brainsex.navigation.nav_arguments
 
 class ResultFragment : Fragment() {
@@ -46,6 +47,10 @@ class ResultFragment : Fragment() {
             }
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
+        }
+
+        buttonMenu.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 
