@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -14,8 +14,12 @@
         android:padding="@dimen/screen_spacing">
 
         <ImageView
+            android:id="@+id/image_logo"
             android:layout_width="200dp"
             android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_brain"
             app:tint="?colorPrimary" />
 
@@ -26,6 +30,9 @@
             android:layout_marginTop="40dp"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
             android:textIsSelectable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_logo"
             tools:text="150" />
 
         <TextView
@@ -36,18 +43,25 @@
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:textIsSelectable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_score"
             tools:text="Male brain" />
 
         <TextView
             android:id="@+id/text_description"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="8dp"
             android:gravity="center_horizontal"
             android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
             android:textIsSelectable="true"
-            tools:text="Your brain is ....." />
+            app:layout_constraintBottom_toTopOf="@id/button_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            tools:text="@string/result_more_than_180_description" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_share"
@@ -58,7 +72,8 @@
             android:layout_marginBottom="8dp"
             android:text="@string/share"
             app:icon="@drawable/ic_baseline_share_24"
-            app:iconGravity="textStart" />
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toTopOf="@id/button_menu" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_menu"
@@ -67,8 +82,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:text="@string/return_to_menu"
-            app:icon="@drawable/ic_home" />
+            app:icon="@drawable/ic_home"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
