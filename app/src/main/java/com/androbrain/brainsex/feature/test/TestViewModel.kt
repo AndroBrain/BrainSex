@@ -33,7 +33,7 @@ class TestViewModel @Inject constructor(
         _state.update {
             it.copy(
                 gender = Gender.valueOf(savedStateHandle.get<String>(nav_arguments.gender)!!),
-                answerWithQuestions = questionsWithAnswers.getOrNull(it.currentQuestionIndex)
+                questionWithAnswers = questionsWithAnswers.getOrNull(it.currentQuestionIndex)
             )
         }
     }
@@ -42,7 +42,7 @@ class TestViewModel @Inject constructor(
         _state.update {
             it.copy(
                 currentQuestionIndex = it.currentQuestionIndex + 1,
-                answerWithQuestions = questionsWithAnswers.getOrNull(it.currentQuestionIndex + 1),
+                questionWithAnswers = questionsWithAnswers.getOrNull(it.currentQuestionIndex + 1),
                 selectedButtonId = null,
                 points = it.points + getPointsByIndex(it)
             )
@@ -59,7 +59,7 @@ class TestViewModel @Inject constructor(
     private fun getPointsByIndex(currentState: GenderTestState): Int {
         val buttonId = currentState.selectedButtonId ?: return NO_ANSWER_POINTS
         val gender = currentState.gender ?: return NO_ANSWER_POINTS
-        return currentState.answerWithQuestions?.answers?.getOrNull(buttonId)?.points?.getPointsByFilter(
+        return currentState.questionWithAnswers?.answers?.getOrNull(buttonId)?.points?.getPointsByFilter(
             gender
         ) ?: NO_ANSWER_POINTS
     }

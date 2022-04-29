@@ -24,8 +24,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-private const val NUMBER_OF_QUESTIONS = 30
-
 @AndroidEntryPoint
 class TestFragment : Fragment() {
 
@@ -47,7 +45,7 @@ class TestFragment : Fragment() {
     }
 
     private fun setupViews() = with(binding) {
-        progressIndicator.max = NUMBER_OF_QUESTIONS
+        progressIndicator.max = viewModel.questionsWithAnswers.size
         buttonNext.setOnClickListener { viewModel.nextQuestionClicked() }
     }
 

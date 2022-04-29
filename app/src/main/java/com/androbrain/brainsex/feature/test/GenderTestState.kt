@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class GenderTestState(
     val currentQuestionIndex: Int,
-    val answerWithQuestions: QuestionWithAnswers<Gender>?,
+    val questionWithAnswers: QuestionWithAnswers<Gender>?,
     val selectedButtonId: Int?,
     val points: Int,
     val gender: Gender?,
@@ -17,7 +17,7 @@ data class GenderTestState(
         val Initial: GenderTestState
             get() = GenderTestState(
                 currentQuestionIndex = 0,
-                answerWithQuestions = null,
+                questionWithAnswers = null,
                 selectedButtonId = null,
                 points = 0,
                 gender = null
