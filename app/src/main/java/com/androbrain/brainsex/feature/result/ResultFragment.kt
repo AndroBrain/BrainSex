@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnLayout
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.androbrain.brainsex.R
@@ -35,6 +37,11 @@ class ResultFragment : Fragment() {
         textTitle.text = testResult.title
         textDescription.text = testResult.description
         textScore.text = arguments?.getString(nav_arguments.points)
+
+        indicatorPoints.doOnLayout {
+            indicatorDotPoints.x = it.width / points.toFloat()
+            it.isVisible = true
+        }
     }
 
     private fun setupActions() = with(binding) {

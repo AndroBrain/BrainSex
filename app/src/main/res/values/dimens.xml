@@ -9,4 +9,6 @@
     <dimen name="indicator_points_corner">16dp</dimen>
     <dimen name="indicator_points_height">8dp</dimen>
     <dimen name="indicator_points_stroke_width">1dp</dimen>
+
+    <dimen name="indicator_dot_points_size">16dp</dimen>
 </resources>
