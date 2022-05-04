@@ -36,7 +36,7 @@
 
     <style name="TextView.Result.Points" parent="TextView">
         <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
-        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
