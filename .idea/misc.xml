@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/drawable/ic_brain.xml" value="0.164" />
         <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/drawable/ic_play.xml" value="0.3828125" />
         <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/drawable/indicator_dot_points.xml" value="0.304" />
@@ -13,6 +14,8 @@
         <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/layout/fragment_result.xml" value="0.25" />
         <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/layout/fragment_test.xml" value="0.1689497716894977" />
         <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/layout/radio_button_answer_choice.xml" value="0.25" />
+        <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.164" />
+        <entry key="..\:/Users/Michal/AndroidStudioProjects/BrainSex/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.164" />
       </map>
     </option>
   </component>
