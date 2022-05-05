@@ -77,8 +77,8 @@ class ResultFragment : Fragment() {
 
                     buttonShare.setOnClickListener {
                         requireContext().shareContent {
-                            putExtra(Intent.EXTRA_TEXT, getString(title))
-                            putExtra(Intent.EXTRA_TITLE, "$points\n${getString(description)}")
+                            putExtra(Intent.EXTRA_TITLE, getString(title))
+                            putExtra(Intent.EXTRA_TEXT, "$points\n${getString(description)}")
                             type = "text/plain"
                         }
                     }
