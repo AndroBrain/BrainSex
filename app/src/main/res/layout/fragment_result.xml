@@ -96,18 +96,18 @@
             android:id="@+id/indicator_points"
             android:layout_width="match_parent"
             android:layout_height="@dimen/indicator_points_height"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/indicator_points"
             app:layout_constraintBottom_toTopOf="@id/button_share" />
 
         <View
             android:id="@+id/indicator_dot_points"
-            android:visibility="gone"
             android:layout_width="@dimen/indicator_dot_points_size"
             android:layout_height="@dimen/indicator_dot_points_size"
             android:background="@drawable/indicator_dot_points"
             app:layout_constraintBottom_toBottomOf="@id/indicator_points"
             app:layout_constraintEnd_toEndOf="@id/indicator_points"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/indicator_points"
             app:layout_constraintTop_toTopOf="@id/indicator_points" />
 
@@ -116,7 +116,6 @@
             style="@style/Button.Outlined.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:text="@string/share"
             app:icon="@drawable/ic_baseline_share_24"

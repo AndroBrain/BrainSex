@@ -15,6 +15,9 @@ import com.androbrain.brainsex.databinding.FragmentResultBinding
 import com.androbrain.brainsex.extension.shareContent
 import com.androbrain.brainsex.navigation.nav_arguments
 
+private const val MAX_POSITIVE_POINTS = 450
+private const val MAX_NEGATIVE_POINTS = 150
+
 class ResultFragment : Fragment() {
 
     private var _binding: FragmentResultBinding? = null
@@ -40,7 +43,17 @@ class ResultFragment : Fragment() {
         textScore.text = arguments?.getString(nav_arguments.points)
 
         indicatorPoints.doOnLayout {
-            indicatorDotPoints.x = it.width / points.toFloat()
+            val part = it.width.toFloat() / (MAX_NEGATIVE_POINTS + MAX_POSITIVE_POINTS)
+            val dotWidth = resources.getDimensionPixelSize(R.dimen.indicator_dot_points_size)
+
+            var dotPosition =
+                (points.toFloat() + MAX_NEGATIVE_POINTS) * part - dotWidth / 2
+            dotPosition = if (dotPosition < 0) 0f else dotPosition
+
+            dotPosition =
+                if (dotPosition >= it.width - dotWidth) (it.width - dotWidth).toFloat() else dotPosition
+
+            indicatorDotPoints.x = dotPosition
             it.isVisible = true
         }
     }
