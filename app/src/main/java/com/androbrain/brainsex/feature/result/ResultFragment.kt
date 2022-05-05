@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.androbrain.brainsex.R
 import com.androbrain.brainsex.core.TestResult
 import com.androbrain.brainsex.databinding.FragmentResultBinding
+import com.androbrain.brainsex.extension.shareContent
 import com.androbrain.brainsex.navigation.nav_arguments
 
 class ResultFragment : Fragment() {
@@ -46,14 +47,11 @@ class ResultFragment : Fragment() {
 
     private fun setupActions() = with(binding) {
         buttonShare.setOnClickListener {
-            val sendIntent = Intent().apply {
-                action = Intent.ACTION_SEND
+            requireContext().shareContent {
                 putExtra(Intent.EXTRA_TEXT, testResult.description)
                 putExtra(Intent.EXTRA_TITLE, "$points\n${testResult.title}")
                 type = "text/plain"
             }
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(shareIntent)
         }
 
         buttonMenu.setOnClickListener {
