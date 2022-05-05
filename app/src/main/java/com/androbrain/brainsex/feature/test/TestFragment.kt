@@ -52,7 +52,7 @@ class TestFragment : Fragment() {
     private fun setupObservers() = with(binding) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.stateGender.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
+                viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
                     if (answerWithQuestions == null) {
                         findNavController().popBackStack()
                         findNavController().navigate("${nav_routes.result}/$points")

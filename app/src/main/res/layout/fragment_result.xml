@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_title"
-            tools:text="@string/result_more_than_180_description" />
+            tools:text="@string/result_female_description" />
 
         <TextView
             android:id="@+id/text_min_symbol"

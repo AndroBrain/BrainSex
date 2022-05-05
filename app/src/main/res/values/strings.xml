@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Płeć mózgu</string>
+
+    <string name="empty" />
     <string name="next_question">Następne pytanie</string>
 
     <string name="choose_gender_female">Kobietą</string>

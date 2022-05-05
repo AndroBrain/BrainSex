@@ -1,6 +1,5 @@
 package com.androbrain.brainsex.feature.test
 
-import android.util.Log
 import androidx.annotation.IdRes
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -25,7 +24,7 @@ class TestViewModel @Inject constructor(
 ) : ViewModel() {
     private val _state =
         MutableStateFlow(savedStateHandle.get(KEY_STATE) ?: GenderTestState.Initial)
-    val stateGender: StateFlow<GenderTestState> = _state.asStateFlow()
+    val state: StateFlow<GenderTestState> = _state.asStateFlow()
 
     val questionsWithAnswers = testRepository.getGenderTest()
 
@@ -64,7 +63,7 @@ class TestViewModel @Inject constructor(
     }
 
     override fun onCleared() {
-        savedStateHandle[KEY_STATE] = stateGender.value
+        savedStateHandle[KEY_STATE] = state.value
         super.onCleared()
     }
 
