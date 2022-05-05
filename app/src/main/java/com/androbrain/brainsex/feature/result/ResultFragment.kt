@@ -75,19 +75,19 @@ class ResultFragment : Fragment() {
     private fun createTestResult(): TestResult {
         val points = points.toInt()
         return when {
-            points > 300 -> TestResult(
+            points > 295 -> TestResult(
                 title = getString(R.string.result_more_than_300_title),
                 description = getString(R.string.result_more_than_180_description)
             )
-            points > 180 -> TestResult(
+            points > 175 -> TestResult(
                 title = getString(R.string.result_180_300_title),
                 description = getString(R.string.result_more_than_180_description)
             )
-            points > 150 -> TestResult(
+            points > 145 -> TestResult(
                 title = getString(R.string.result_150_180_title),
                 description = getString(R.string.result_150_180_description),
             )
-            points > 0 -> TestResult(
+            points > 5 -> TestResult(
                 title = getString(R.string.result_0_150_title),
                 description = getString(R.string.result_0_150_description),
             )
