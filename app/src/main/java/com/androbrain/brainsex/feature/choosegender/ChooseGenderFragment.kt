@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.androbrain.brainsex.core.gender.Gender
 import com.androbrain.brainsex.databinding.FragmentChooseGenderBinding
+import com.androbrain.brainsex.extension.addFadeAnimations
 import com.androbrain.brainsex.navigation.nav_routes
 
 class ChooseGenderFragment : Fragment() {
@@ -28,12 +30,16 @@ class ChooseGenderFragment : Fragment() {
     private fun setupActions() = with(binding) {
         buttonMale.setOnClickListener {
             findNavController().popBackStack()
-            findNavController().navigate("${nav_routes.test}/${Gender.MALE}")
+            findNavController().navigate(
+                "${nav_routes.test}/${Gender.MALE}",
+                navOptions { addFadeAnimations() })
         }
 
         buttonFemale.setOnClickListener {
             findNavController().popBackStack()
-            findNavController().navigate("${nav_routes.test}/${Gender.FEMALE}")
+            findNavController().navigate(
+                "${nav_routes.test}/${Gender.FEMALE}",
+                navOptions { addFadeAnimations() })
         }
     }
 

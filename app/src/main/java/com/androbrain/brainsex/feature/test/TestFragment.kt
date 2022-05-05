@@ -13,11 +13,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.androbrain.brainsex.R
 import com.androbrain.brainsex.core.QuestionWithAnswers
 import com.androbrain.brainsex.core.gender.Gender
 import com.androbrain.brainsex.databinding.FragmentTestBinding
 import com.androbrain.brainsex.databinding.RadioButtonAnswerChoiceBinding
+import com.androbrain.brainsex.extension.addFadeAnimations
 import com.androbrain.brainsex.extension.animateProgressCompat
 import com.androbrain.brainsex.navigation.nav_routes
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +57,9 @@ class TestFragment : Fragment() {
                 viewModel.state.collect { (currentQuestionIndex, answerWithQuestions, selectedButtonId, points) ->
                     if (answerWithQuestions == null) {
                         findNavController().popBackStack()
-                        findNavController().navigate("${nav_routes.result}/$points")
+                        findNavController().navigate(
+                            "${nav_routes.result}/$points",
+                            navOptions { addFadeAnimations() })
                         return@collect
                     }
 

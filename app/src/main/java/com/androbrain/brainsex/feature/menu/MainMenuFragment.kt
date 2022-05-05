@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.androbrain.brainsex.databinding.FragmentMainMenuBinding
+import com.androbrain.brainsex.extension.addFadeAnimations
 import com.androbrain.brainsex.navigation.nav_routes
 
 class MainMenuFragment : Fragment() {
@@ -26,7 +28,9 @@ class MainMenuFragment : Fragment() {
 
     private fun setupActions() = with(binding) {
         buttonStartTest.setOnClickListener {
-            findNavController().navigate(nav_routes.choose_gender)
+            findNavController().navigate(nav_routes.choose_gender, navOptions {
+                addFadeAnimations()
+            })
         }
     }
 
